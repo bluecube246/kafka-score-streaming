@@ -1,0 +1,13 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+dependencies {
+    implementation(project(":data-generator"))
+    implementation 'com.github.ben-manes.caffeine:caffeine:2.9.3'
+}
+
+application {
+    mainClassName 'org.example.SampleProducer'
+}

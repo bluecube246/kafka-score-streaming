@@ -1,0 +1,6 @@
+rootProject.name = 'kafka-personal-project'
+
+include("basic")
+include 'data-generator'
+include 'kafka-streams'
+

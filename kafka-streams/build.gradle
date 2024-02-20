@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+dependencies {
+    implementation(project(":data-generator"))
+    implementation 'org.apache.kafka:kafka-streams:3.4.1'
+
+    ['armeria',
+    ].each {
+        implementation "com.linecorp.armeria:${it}:1.22.1"
+    }
+
+    // Logging
+    runtimeOnly 'ch.qos.logback:logback-classic:1.2.11'
+    runtimeOnly 'org.slf4j:log4j-over-slf4j:1.7.36'
+}
+
+application {
+    mainClassName 'de.kafka.streams.ad.ImpClickJoinStreamsApp'
+}
